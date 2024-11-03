@@ -144,18 +144,17 @@
 
     <!-- Background Music -->
     <audio id="bgMusic" loop>
-        <source src="Happy Birthday Whatsapp Status Video  ABCD2  Awww Tera Happy Birthday.mp3" type="audio/mp3">
+        <source src="/my music.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
     </audio>
 
     <script>
-        // Play background music
-        window.onload = function() {
-            document.getElementById('bgMusic').play();
-        };
-
-        // Toggle the wish message
+        // Toggle the wish message and play background music
         document.getElementById('wishButton').addEventListener('click', function() {
+            const bgMusic = document.getElementById('bgMusic');
+            bgMusic.play().catch(error => {
+                console.error('Playback failed:', error);
+            });
             document.getElementById('wishMessage').classList.toggle('hidden');
         });
     </script>
